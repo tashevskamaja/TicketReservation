@@ -110,7 +110,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="DbHelper\DBAccess.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Models\Passenger.cs" />

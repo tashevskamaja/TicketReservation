@@ -21,12 +21,15 @@ namespace WebApiTrainTicket.Controllers
         }
 
         // GET api/passengers
+        [HttpGet]
         public IEnumerable<Passenger> Get()
         {
             return service.GetPassengers();
         }
 
         // GET api/passengers/5
+        [HttpGet]
+        [Route("passenger/{id}")]
         public IHttpActionResult Get(int passenger_id)
         {
             var passenger = this.service.GetPassenger(passenger_id);
@@ -43,8 +46,10 @@ namespace WebApiTrainTicket.Controllers
             throw new NotImplementedException();
         }
 
+        [HttpPost]
         // POST api/passengers
         //[AllowAnnonymous]
+        [Route("passenger")]
         public HttpResponseMessage Post(Passenger passenger)
         {
             Passenger_Validation validator = new Passenger_Validation();
@@ -59,6 +64,7 @@ namespace WebApiTrainTicket.Controllers
 
         }
 
+        [HttpPut]
         // PUT api/passengers/5
         public IHttpActionResult Put(int passenger_id, Passenger passenger)
         {
@@ -82,6 +88,7 @@ namespace WebApiTrainTicket.Controllers
         }
 
         // DELETE api/passengers/5
+        [HttpDelete]
         public HttpResponseMessage Delete(int passenger_id)
         {
             try

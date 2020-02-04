@@ -26,6 +26,7 @@ namespace WebApiTrainTicket.Controllers
         }
 
         // GET api/trains/5
+        [Route("train/{id}")]
         public IHttpActionResult Get(int train_id)
         {
             var train = service.GetTrain(train_id);
